@@ -1,6 +1,11 @@
 const ENDPOINT = 'https://api.github.com/graphql';
 const TOKEN = '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';
 
+const headers = {
+  'Content-Type': 'application/json',
+  Authorization: `Bearer ${TOKEN}`,
+};
+
 const body = {
   query: `
 query { 
@@ -39,16 +44,13 @@ const init = async () => {
   let result;
 
   try {
-    const result = await fetch(ENDPOINT, {
+    const res = await fetch(ENDPOINT, {
       method: 'POST',
       body: JSON.stringify(body),
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${TOKEN}`,
-      },
+      headers,
     });
 
-    const data = await result.json();
+    const data = await res.json();
 
     result = data.data.viewer;
   } catch (error) {

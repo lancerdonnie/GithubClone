@@ -1,0 +1,84 @@
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.items-center {
+  align-items: center;
+}
+.items-end {
+  align-items: flex-end;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.px-32 {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.px-12 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.py-16 {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.py-24 {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.mr-16 {
+  margin-right: 16px;
+}
+.mt-16 {
+  margin-top: 16;
+}
+
+.h-28 {
+  height: 28px;
+}
+
+/* Colors */
+
+.bg-white {
+  background-color: white;
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+.nav-bg-color {
+  background-color: var(--nav-bg-color);
+}
+
+.nav-text-color {
+  color: var(--nav-text-color);
+}
+
+.text-white {
+  color: white;
+}
+
+/* font */
+.font-bolder {
+  font-weight: 600;
+}
+
+/* border */
+.border-round {
+  border-radius: 50%;
+}
