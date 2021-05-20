@@ -171,6 +171,7 @@ const fetchData = async () => {
     repoList.appendChild(li);
   });
 
+  //Toggle harmburger
   document.querySelector('#harmburger').addEventListener('click', (e) => {
     const style = document.querySelector('.middle-nav').style;
     if (style.display !== 'flex') {
@@ -178,7 +179,6 @@ const fetchData = async () => {
     } else {
       style.display = '';
     }
-    // .classList.toggle('flex');
   });
 
   name.textContent = document.body.classList.remove('hidden');
