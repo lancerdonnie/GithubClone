@@ -5,26 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lancerdonnie</title>
-    <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./utilities.css" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body class="hidden">
-    <nav class="top-nav flex items-center justify-between px-32 py-16">
-      <div class="github-icon flex items-center">
-        <a href="https://github.com" class="text-white mr-16">
-          <svg
-            height="32"
-            viewBox="0 0 16 16"
-            version="1.1"
-            width="32"
-            aria-hidden="true"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
-            ></path>
-          </svg>
-        </a>
+    <nav class="top-nav flex items-center px-32 py-16">
+      <div class="hidden text-white cursor-pointer harmburger">
+        <svg
+          height="24"
+          viewBox="0 0 16 16"
+          version="1.1"
+          width="24"
+          aria-hidden="true"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"
+          ></path>
+        </svg>
+      </div>
+      <a
+        href="https://github.com"
+        class="github-icon flex justify-center text-white mr-16"
+      >
+        <svg
+          height="32"
+          viewBox="0 0 16 16"
+          version="1.1"
+          width="32"
+          aria-hidden="true"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
+          ></path>
+        </svg>
+      </a>
+      <div class="flex items-center middle-nav" style="flex-grow: 1">
         <form class="mr-16">
           <div class="relative">
             <input
@@ -42,6 +59,7 @@
         </form>
         <div class="header-links">
           <a href="">Pull requests</a>
+          <a class="hidden" href="">Dashboard</a>
           <a href="">Issues</a>
           <a href="">Marketplace</a>
           <a href="">Explore</a>
@@ -49,11 +67,11 @@
       </div>
       <div class="notification flex items-center text-white">
         <a
-          class="mr-16 relative"
+          class="notification-icon mr-16 relative"
           href=""
           aria-label="You have unread notifications"
         >
-          <span class="notification"></span>
+          <span class=""></span>
           <svg
             aria-hidden="true"
             viewBox="0 0 16 16"
@@ -70,7 +88,7 @@
             ></path>
           </svg>
         </a>
-        <div class="cursor-pointer mr-16">
+        <div class="plus-icon cursor-pointer mr-16">
           <details class="details-overlay details-reset js-header-promo-toggle">
             <summary
               class="flex items-center"
@@ -94,7 +112,7 @@
             </summary>
           </details>
         </div>
-        <div class="cursor-pointer">
+        <div class="avatar-icon cursor-pointer">
           <details>
             <summary
               aria-label="View profile and more"
@@ -118,8 +136,11 @@
       </div>
     </nav>
     <main>
-      <div style="position: sticky; top: 0; border-bottom: 1px solid #e1e4e8">
-        <div class="flex bg-white mt-24" style="height: 49px">
+      <div
+        class="a mt-24"
+        style="position: sticky; top: 0; border-bottom: 1px solid #e1e4e8"
+      >
+        <div class="flex bg-white" style="height: 49px; overflow: auto">
           <div style="flex: 1"></div>
           <nav style="flex: 3" class="tabs flex items-center">
             <a class="tab" href="">
@@ -187,57 +208,57 @@
           </nav>
         </div>
       </div>
-      <div class="flex px-16">
-        <div class="px-16" style="flex: 1">
-          <div>
-            <div
-              class="flex justify-center relative"
-              style="z-index: 4; margin-top: -30px"
-            >
-              <img
-                id="big-avatar"
-                style="border: 1px solid #e1e4e8"
-                class="border-round cursor-pointer w-full"
-                alt="Avatar"
-              />
-            </div>
-            <h1 class="py-16">
-              <span id="name" class="block text-lg">Ire Adenirokun</span>
-              <span
-                id="login"
-                class="block text-md line-24"
-                style="font-weight: 300; color: #586069"
-                >ireade</span
-              >
-            </h1>
-            <span id="bio" class="mt-16 text-smd"
-              >Frontend Developer and User Interface Designer</span
-            >
-          </div>
-        </div>
-        <div class="px-16" style="flex: 3">
-          <form
-            class="py-16 flex"
-            style="height: 65px; border-bottom: 1px solid #e1e4e8"
-          >
-            <input
-              placeholder="Find a repository..."
-              class="repo-search w-full"
-              type="text"
-              name=""
-              id=""
-            />
-          </form>
+      <!-- <div class="flex px-16"> -->
+      <div class="b px-16" style="flex: 1">
+        <div class="b-a">
           <div
-            class="flex items-center"
-            style="border-bottom: 1px solid #e1e4e8; height: 50px"
+            class="flex justify-center relative"
+            style="z-index: 4; margin-top: -30px"
           >
-            <span id="count" class="font-bold">124</span>&nbsp;results for&nbsp;
-            <span class="font-bold">public</span>&nbsp;repositories
+            <img
+              id="big-avatar"
+              style="border: 1px solid #e1e4e8"
+              class="border-round cursor-pointer w-full"
+              alt="Avatar"
+            />
           </div>
-          <ul id="repo-list"></ul>
+          <h1 class="py-16">
+            <span id="name" class="block text-lg">Ire Adenirokun</span>
+            <span
+              id="login"
+              class="block text-md line-24"
+              style="font-weight: 300; color: #586069"
+              >ireade</span
+            >
+          </h1>
         </div>
+        <span id="bio" class="mt-16 text-smd"
+          >Frontend Developer and User Interface Designer</span
+        >
       </div>
+      <div class="c px-16" style="flex: 3">
+        <form
+          class="py-16 flex"
+          style="height: 65px; border-bottom: 1px solid #e1e4e8"
+        >
+          <input
+            placeholder="Find a repository..."
+            class="repo-search w-full"
+            type="text"
+            name=""
+            id=""
+          />
+        </form>
+        <div
+          class="flex items-center"
+          style="border-bottom: 1px solid #e1e4e8; height: 50px"
+        >
+          <span id="count" class="font-bold">124</span>&nbsp;results for&nbsp;
+          <span class="font-bold">public</span>&nbsp;repositories
+        </div>
+        <ul id="repo-list"></ul>
+      </div>
+      <!-- </div> -->
     </main>
   </body>
   <script defer src="./script.js"></script>
