@@ -11,9 +11,8 @@
   <body>
     <nav class="top-nav flex items-center justify-between px-32 py-16">
       <div class="flex items-center">
-        <a href="https://github.com" class="bg-white mr-16">
+        <a href="https://github.com" class="text-white mr-16">
           <svg
-            class=""
             height="32"
             viewBox="0 0 16 16"
             version="1.1"
@@ -27,11 +26,19 @@
           </svg>
         </a>
         <form class="mr-16">
-          <input
-            placeholder="Search or jump to..."
-            type="text"
-            class="bg-transparent px-12 h-28"
-          />
+          <div class="relative">
+            <input
+              placeholder="Search or jump to..."
+              type="text"
+              class="search bg-transparent px-12 h-28"
+            />
+            <img
+              src="https://github.githubassets.com/images/search-key-slash.svg"
+              alt=""
+              class="absolute"
+              style="top: 50%; right: 8px; transform: translateY(-50%)"
+            />
+          </div>
         </form>
         <div class="header-links">
           <a href="">Pull requests</a>
@@ -40,16 +47,19 @@
           <a href="">Explore</a>
         </div>
       </div>
-      <div class="flex items-center">
-        <a href="/notifications" aria-label="You have unread notifications">
-          <span></span>
+      <div class="flex items-center text-white">
+        <a
+          class="mr-16 relative"
+          href="/notifications"
+          aria-label="You have unread notifications"
+        >
+          <span class="notification"></span>
           <svg
             aria-hidden="true"
             viewBox="0 0 16 16"
             version="1.1"
             height="16"
             width="16"
-            class=""
           >
             <path
               d="M8 16a2 2 0 001.985-1.75c.017-.137-.097-.25-.235-.25h-3.5c-.138 0-.252.113-.235.25A2 2 0 008 16z"
@@ -60,12 +70,11 @@
             ></path>
           </svg>
         </a>
-        <div class="Header-item position-relative d-none d-md-flex">
+        <div class="cursor-pointer mr-16">
           <details class="details-overlay details-reset js-header-promo-toggle">
             <summary
-              class="Header-link"
+              class="flex items-center"
               aria-label="Create new…"
-              data-ga-click="Header, create new, icon:add"
               aria-haspopup="menu"
               role="button"
             >
@@ -75,7 +84,6 @@
                 version="1.1"
                 height="16"
                 width="16"
-                class="octicon octicon-plus"
               >
                 <path
                   fill-rule="evenodd"
@@ -84,68 +92,15 @@
               </svg>
               <span class="dropdown-caret"></span>
             </summary>
-            <details-menu class="dropdown-menu dropdown-menu-sw" role="menu">
-              <a
-                role="menuitem"
-                class="dropdown-item"
-                href="/new"
-                data-ga-click="Header, create new repository"
-              >
-                New repository
-              </a>
-
-              <a
-                role="menuitem"
-                class="dropdown-item"
-                href="/new/import"
-                data-ga-click="Header, import a repository"
-              >
-                Import repository
-              </a>
-
-              <a
-                role="menuitem"
-                class="dropdown-item"
-                href="https://gist.github.com/"
-                data-ga-click="Header, create new gist"
-              >
-                New gist
-              </a>
-
-              <a
-                role="menuitem"
-                class="dropdown-item"
-                href="/organizations/new"
-                data-ga-click="Header, create new organization"
-              >
-                New organization
-              </a>
-
-              <a
-                role="menuitem"
-                class="dropdown-item"
-                href="/new/project"
-                data-ga-click="Header, create new project"
-              >
-                New project
-              </a>
-            </details-menu>
           </details>
         </div>
-        <div class="Header-item position-relative mr-0 d-none d-md-flex">
-          <details
-            class="
-              details-overlay details-reset
-              js-header-promo-toggle js-feature-preview-indicator-container
-            "
-            data-feature-preview-indicator-src="/users/lancerdonnie/feature_preview/indicator_check"
-          >
+        <div class="cursor-pointer">
+          <details>
             <summary
-              class="Header-link"
               aria-label="View profile and more"
-              data-ga-click="Header, show menu, icon:avatar"
               aria-haspopup="menu"
               role="button"
+              class="flex items-center"
             >
               <img
                 src="https://avatars.githubusercontent.com/u/49131807?s=60&amp;v=4"
@@ -153,956 +108,91 @@
                 size="20"
                 height="20"
                 width="20"
-                class="avatar-user avatar avatar-small"
+                class="border-round"
               />
-              <span
-                class="feature-preview-indicator js-feature-preview-indicator"
-                style="top: 1px"
-                hidden=""
-              ></span>
               <span class="dropdown-caret"></span>
             </summary>
-            <details-menu
-              class="dropdown-menu dropdown-menu-sw"
-              style="width: 180px"
-              src="/users/49131807/menu"
-              preload=""
-              role="menu"
-            >
-              <div class="header-nav-current-user css-truncate">
-                <a
-                  role="menuitem"
-                  class="
-                    no-underline
-                    user-profile-link
-                    px-3
-                    pt-2
-                    pb-2
-                    mb-n2
-                    mt-n1
-                    d-block
-                  "
-                  href="/lancerdonnie"
-                  data-ga-click="Header, go to profile, text:Signed in as"
-                  >Signed in as
-                  <strong class="css-truncate-target">lancerdonnie</strong></a
-                >
-              </div>
-              <div role="none" class="dropdown-divider"></div>
-
-              <div
-                class="
-                  pl-3
-                  pr-3
-                  f6
-                  user-status-container
-                  js-user-status-context
-                  lh-condensed
-                "
-                data-url="/users/status?compact=1&amp;link_mentions=0&amp;truncate=1"
-              >
-                <div
-                  class="
-                    js-user-status-container
-                    rounded-1
-                    px-2
-                    py-1
-                    mt-2
-                    border
-                  "
-                  data-team-hovercards-enabled=""
-                >
-                  <details
-                    class="
-                      js-user-status-details
-                      details-reset details-overlay details-overlay-dark
-                    "
-                  >
-                    <summary
-                      class="
-                        btn-link btn-block
-                        Link--secondary
-                        no-underline
-                        js-toggle-user-status-edit
-                        toggle-user-status-edit
-                      "
-                      role="menuitem"
-                    >
-                      <div class="d-flex flex-items-center flex-items-stretch">
-                        <div
-                          class="
-                            f6
-                            lh-condensed
-                            user-status-header
-                            d-flex
-                            user-status-emoji-only-header
-                            circle
-                          "
-                        >
-                          <div
-                            class="
-                              user-status-emoji-container
-                              flex-shrink-0
-                              mr-2
-                              d-flex
-                              flex-items-center flex-justify-center
-                              lh-condensed-ultra
-                              v-align-bottom
-                            "
-                          >
-                            <div>
-                              <g-emoji
-                                class="g-emoji"
-                                alias="house"
-                                fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3e0.png"
-                                >🏠</g-emoji
-                              >
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          class="user-status-message-wrapper f6 min-width-0"
-                          style="line-height: 20px"
-                        >
-                          <div
-                            class="
-                              css-truncate css-truncate-target
-                              width-fit
-                              color-text-primary
-                              text-left
-                            "
-                          >
-                            <span>Working from home</span>
-                          </div>
-                        </div>
-                      </div>
-                    </summary>
-                    <details-dialog
-                      class="rounded-1 anim-fade-in fast Box Box--overlay"
-                      role="dialog"
-                      tabindex="-1"
-                      aria-modal="true"
-                    >
-                      <!-- '"` --><!-- </textarea></xmp> -->
-                      <form
-                        class="position-relative flex-auto js-user-status-form"
-                        action="/users/status?circle=0&amp;compact=1&amp;link_mentions=0&amp;truncate=1"
-                        accept-charset="UTF-8"
-                        method="post"
-                      >
-                        <input type="hidden" name="_method" value="put" /><input
-                          type="hidden"
-                          name="authenticity_token"
-                          value="IjJIGbZnzEdw18rgrcfS8HrQedBD9c0K949cY07LQe+Sc+jfadKUbuH9HU58ZYKZKpU8FQ09jdkemJwOhBAX+A=="
-                        />
-                        <div
-                          class="Box-header color-bg-tertiary border-bottom p-3"
-                        >
-                          <button
-                            class="
-                              Box-btn-octicon
-                              js-toggle-user-status-edit
-                              btn-octicon
-                              float-right
-                            "
-                            type="reset"
-                            aria-label="Close dialog"
-                            data-close-dialog=""
-                          >
-                            <svg
-                              aria-hidden="true"
-                              viewBox="0 0 16 16"
-                              version="1.1"
-                              height="16"
-                              width="16"
-                              class="octicon octicon-x"
-                            >
-                              <path
-                                fill-rule="evenodd"
-                                d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"
-                              ></path>
-                            </svg>
-                          </button>
-                          <h3 class="Box-title f5 text-bold color-text-primary">
-                            Edit status
-                          </h3>
-                        </div>
-                        <input
-                          type="hidden"
-                          name="emoji"
-                          class="js-user-status-emoji-field"
-                          value=":house:"
-                        />
-                        <input
-                          type="hidden"
-                          name="organization_id"
-                          class="js-user-status-org-id-field"
-                          value=""
-                        />
-                        <div class="px-3 py-2 color-text-primary">
-                          <div
-                            class="
-                              js-characters-remaining-container
-                              position-relative
-                              mt-2
-                            "
-                          >
-                            <div
-                              class="
-                                input-group
-                                d-table
-                                form-group
-                                my-0
-                                js-user-status-form-group
-                              "
-                            >
-                              <span
-                                class="
-                                  input-group-button
-                                  d-table-cell
-                                  v-align-middle
-                                "
-                                style="width: 1%"
-                              >
-                                <button
-                                  type="button"
-                                  aria-label="Choose an emoji"
-                                  class="
-                                    btn-outline btn
-                                    js-toggle-user-status-emoji-picker
-                                    p-0
-                                  "
-                                >
-                                  <span
-                                    class="js-user-status-original-emoji"
-                                    hidden=""
-                                    ><div>
-                                      <g-emoji
-                                        class="g-emoji"
-                                        alias="house"
-                                        fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3e0.png"
-                                        >🏠</g-emoji
-                                      >
-                                    </div></span
-                                  >
-                                  <span class="js-user-status-custom-emoji"
-                                    ><div>
-                                      <g-emoji
-                                        class="g-emoji"
-                                        alias="house"
-                                        fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3e0.png"
-                                        >🏠</g-emoji
-                                      >
-                                    </div></span
-                                  >
-                                  <span
-                                    class="js-user-status-no-emoji-icon"
-                                    hidden=""
-                                  >
-                                    <svg
-                                      aria-hidden="true"
-                                      viewBox="0 0 16 16"
-                                      version="1.1"
-                                      height="16"
-                                      width="16"
-                                      class="octicon octicon-smiley"
-                                    >
-                                      <path
-                                        fill-rule="evenodd"
-                                        d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zM5 8a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zM5.32 9.636a.75.75 0 011.038.175l.007.009c.103.118.22.222.35.31.264.178.683.37 1.285.37.602 0 1.02-.192 1.285-.371.13-.088.247-.192.35-.31l.007-.008a.75.75 0 111.222.87l-.614-.431c.614.43.614.431.613.431v.001l-.001.002-.002.003-.005.007-.014.019a1.984 1.984 0 01-.184.213c-.16.166-.338.316-.53.445-.63.418-1.37.638-2.127.629-.946 0-1.652-.308-2.126-.63a3.32 3.32 0 01-.715-.657l-.014-.02-.005-.006-.002-.003v-.002h-.001l.613-.432-.614.43a.75.75 0 01.183-1.044h.001z"
-                                      ></path>
-                                    </svg>
-                                  </span>
-                                </button>
-                              </span>
-                              <text-expander
-                                keys=": @"
-                                data-mention-url="/autocomplete/user-suggestions"
-                                data-emoji-url="/autocomplete/emoji"
-                              >
-                                <input
-                                  type="text"
-                                  autocomplete="off"
-                                  data-no-org-url="/autocomplete/user-suggestions"
-                                  data-org-url="/suggestions?mention_suggester=1"
-                                  data-maxlength="80"
-                                  class="
-                                    d-table-cell
-                                    width-full
-                                    form-control
-                                    js-user-status-message-field
-                                    js-characters-remaining-field
-                                  "
-                                  placeholder="What's happening?"
-                                  name="message"
-                                  value="Working from home"
-                                  aria-label="What is your current status?"
-                                />
-                              </text-expander>
-                              <div class="error">
-                                Could not update your status, please try again.
-                              </div>
-                            </div>
-                            <div
-                              style="margin-left: 53px"
-                              class="
-                                my-1
-                                text-small
-                                label-characters-remaining
-                                js-characters-remaining
-                              "
-                              data-suffix="remaining"
-                              hidden=""
-                            >
-                              80 remaining
-                            </div>
-                          </div>
-                          <include-fragment
-                            class="js-user-status-emoji-picker"
-                            data-url="/users/status/emoji"
-                          ></include-fragment>
-                          <div
-                            class="overflow-auto ml-n3 mr-n3 px-3 border-bottom"
-                            style="max-height: 33vh"
-                          >
-                            <div
-                              class="
-                                user-status-suggestions
-                                js-user-status-suggestions
-                                collapsed
-                                overflow-hidden
-                              "
-                            >
-                              <h4 class="f6 text-normal my-3">Suggestions:</h4>
-                              <div class="mx-3 mt-2 clearfix">
-                                <div class="float-left col-6">
-                                  <button
-                                    type="button"
-                                    value=":palm_tree:"
-                                    class="
-                                      d-flex
-                                      flex-items-baseline flex-items-stretch
-                                      lh-condensed
-                                      f6
-                                      btn-link
-                                      Link--secondary
-                                      no-underline
-                                      js-predefined-user-status
-                                      mb-1
-                                    "
-                                  >
-                                    <div
-                                      class="
-                                        emoji-status-width
-                                        mr-2
-                                        v-align-middle
-                                        js-predefined-user-status-emoji
-                                      "
-                                    >
-                                      <g-emoji
-                                        alias="palm_tree"
-                                        fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f334.png"
-                                        >🌴</g-emoji
-                                      >
-                                    </div>
-                                    <div
-                                      class="
-                                        d-flex
-                                        flex-items-center
-                                        no-underline
-                                        js-predefined-user-status-message
-                                        ws-normal
-                                        text-left
-                                      "
-                                      style="border-left: 1px solid transparent"
-                                    >
-                                      On vacation
-                                    </div>
-                                  </button>
-                                  <button
-                                    type="button"
-                                    value=":face_with_thermometer:"
-                                    class="
-                                      d-flex
-                                      flex-items-baseline flex-items-stretch
-                                      lh-condensed
-                                      f6
-                                      btn-link
-                                      Link--secondary
-                                      no-underline
-                                      js-predefined-user-status
-                                      mb-1
-                                    "
-                                  >
-                                    <div
-                                      class="
-                                        emoji-status-width
-                                        mr-2
-                                        v-align-middle
-                                        js-predefined-user-status-emoji
-                                      "
-                                    >
-                                      <g-emoji
-                                        alias="face_with_thermometer"
-                                        fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f912.png"
-                                        >🤒</g-emoji
-                                      >
-                                    </div>
-                                    <div
-                                      class="
-                                        d-flex
-                                        flex-items-center
-                                        no-underline
-                                        js-predefined-user-status-message
-                                        ws-normal
-                                        text-left
-                                      "
-                                      style="border-left: 1px solid transparent"
-                                    >
-                                      Out sick
-                                    </div>
-                                  </button>
-                                </div>
-                                <div class="float-left col-6">
-                                  <button
-                                    type="button"
-                                    value=":house:"
-                                    class="
-                                      d-flex
-                                      flex-items-baseline flex-items-stretch
-                                      lh-condensed
-                                      f6
-                                      btn-link
-                                      Link--secondary
-                                      no-underline
-                                      js-predefined-user-status
-                                      mb-1
-                                    "
-                                  >
-                                    <div
-                                      class="
-                                        emoji-status-width
-                                        mr-2
-                                        v-align-middle
-                                        js-predefined-user-status-emoji
-                                      "
-                                    >
-                                      <g-emoji
-                                        alias="house"
-                                        fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3e0.png"
-                                        >🏠</g-emoji
-                                      >
-                                    </div>
-                                    <div
-                                      class="
-                                        d-flex
-                                        flex-items-center
-                                        no-underline
-                                        js-predefined-user-status-message
-                                        ws-normal
-                                        text-left
-                                      "
-                                      style="border-left: 1px solid transparent"
-                                    >
-                                      Working from home
-                                    </div>
-                                  </button>
-                                  <button
-                                    type="button"
-                                    value=":dart:"
-                                    class="
-                                      d-flex
-                                      flex-items-baseline flex-items-stretch
-                                      lh-condensed
-                                      f6
-                                      btn-link
-                                      Link--secondary
-                                      no-underline
-                                      js-predefined-user-status
-                                      mb-1
-                                    "
-                                  >
-                                    <div
-                                      class="
-                                        emoji-status-width
-                                        mr-2
-                                        v-align-middle
-                                        js-predefined-user-status-emoji
-                                      "
-                                    >
-                                      <g-emoji
-                                        alias="dart"
-                                        fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3af.png"
-                                        >🎯</g-emoji
-                                      >
-                                    </div>
-                                    <div
-                                      class="
-                                        d-flex
-                                        flex-items-center
-                                        no-underline
-                                        js-predefined-user-status-message
-                                        ws-normal
-                                        text-left
-                                      "
-                                      style="border-left: 1px solid transparent"
-                                    >
-                                      Focusing
-                                    </div>
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                            <div
-                              class="user-status-limited-availability-container"
-                            >
-                              <div class="form-checkbox my-0">
-                                <input
-                                  type="checkbox"
-                                  name="limited_availability"
-                                  value="1"
-                                  class="
-                                    js-user-status-limited-availability-checkbox
-                                  "
-                                  data-default-message="I may be slow to respond."
-                                  aria-describedby="limited-availability-help-text-truncate-true-compact-true"
-                                  id="limited-availability-truncate-true-compact-true"
-                                />
-                                <label
-                                  class="d-block f5 color-text-primary mb-1"
-                                  for="limited-availability-truncate-true-compact-true"
-                                >
-                                  Busy
-                                </label>
-                                <p
-                                  class="note"
-                                  id="limited-availability-help-text-truncate-true-compact-true"
-                                >
-                                  When others mention you, assign you, or
-                                  request your review, GitHub will let them know
-                                  that you have limited availability.
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="d-inline-block f5 mr-2 pt-3 pb-2">
-                            <div class="d-inline-block mr-1">Clear status</div>
-
-                            <details
-                              class="
-                                js-user-status-expire-drop-down
-                                f6
-                                dropdown
-                                details-reset details-overlay
-                                d-inline-block
-                                mr-2
-                              "
-                            >
-                              <summary
-                                class="btn btn-sm v-align-baseline"
-                                aria-haspopup="true"
-                              >
-                                <div
-                                  class="
-                                    js-user-status-expiration-interval-selected
-                                    d-inline-block
-                                    v-align-baseline
-                                  "
-                                >
-                                  Never
-                                </div>
-                                <div class="dropdown-caret"></div>
-                              </summary>
-
-                              <ul
-                                class="
-                                  dropdown-menu dropdown-menu-se
-                                  pl-0
-                                  overflow-auto
-                                "
-                                style="width: 220px; max-height: 15.5em"
-                              >
-                                <li>
-                                  <button
-                                    type="button"
-                                    class="
-                                      btn-link
-                                      dropdown-item
-                                      js-user-status-expire-button
-                                      ws-normal
-                                    "
-                                    title="Never"
-                                  >
-                                    <span class="d-inline-block text-bold mb-1"
-                                      >Never</span
-                                    >
-                                    <div class="f6 lh-condensed">
-                                      Keep this status until you clear your
-                                      status or edit your status.
-                                    </div>
-                                  </button>
-                                </li>
-                                <li class="dropdown-divider" role="none"></li>
-                                <li>
-                                  <button
-                                    type="button"
-                                    class="
-                                      btn-link
-                                      dropdown-item
-                                      ws-normal
-                                      js-user-status-expire-button
-                                    "
-                                    title="in 30 minutes"
-                                    value="2021-05-19T17:41:58+01:00"
-                                  >
-                                    in 30 minutes
-                                  </button>
-                                </li>
-                                <li>
-                                  <button
-                                    type="button"
-                                    class="
-                                      btn-link
-                                      dropdown-item
-                                      ws-normal
-                                      js-user-status-expire-button
-                                    "
-                                    title="in 1 hour"
-                                    value="2021-05-19T18:11:58+01:00"
-                                  >
-                                    in 1 hour
-                                  </button>
-                                </li>
-                                <li>
-                                  <button
-                                    type="button"
-                                    class="
-                                      btn-link
-                                      dropdown-item
-                                      ws-normal
-                                      js-user-status-expire-button
-                                    "
-                                    title="in 4 hours"
-                                    value="2021-05-19T21:11:58+01:00"
-                                  >
-                                    in 4 hours
-                                  </button>
-                                </li>
-                                <li>
-                                  <button
-                                    type="button"
-                                    class="
-                                      btn-link
-                                      dropdown-item
-                                      ws-normal
-                                      js-user-status-expire-button
-                                    "
-                                    title="today"
-                                    value="2021-05-19T23:59:59+01:00"
-                                  >
-                                    today
-                                  </button>
-                                </li>
-                                <li>
-                                  <button
-                                    type="button"
-                                    class="
-                                      btn-link
-                                      dropdown-item
-                                      ws-normal
-                                      js-user-status-expire-button
-                                    "
-                                    title="this week"
-                                    value="2021-05-23T23:59:59+01:00"
-                                  >
-                                    this week
-                                  </button>
-                                </li>
-                              </ul>
-                            </details>
-                            <input
-                              class="js-user-status-expiration-date-input"
-                              type="hidden"
-                              name="expires_at"
-                              value=""
-                            />
-                          </div>
-
-                          <include-fragment
-                            class="js-user-status-org-picker"
-                            data-url="/users/status/organizations"
-                          ></include-fragment>
-                        </div>
-                        <div
-                          class="
-                            d-flex
-                            flex-items-center flex-justify-between
-                            p-3
-                            border-top
-                          "
-                        >
-                          <button
-                            type="submit"
-                            class="
-                              width-full
-                              btn btn-primary
-                              mr-2
-                              js-user-status-submit
-                            "
-                          >
-                            Set status
-                          </button>
-                          <button
-                            type="button"
-                            class="
-                              width-full
-                              js-clear-user-status-button
-                              btn
-                              ml-2
-                              js-user-status-exists
-                            "
-                          >
-                            Clear status
-                          </button>
-                        </div>
-                      </form>
-                    </details-dialog>
-                  </details>
-                </div>
-              </div>
-              <div role="none" class="dropdown-divider"></div>
-
-              <a
-                role="menuitem"
-                class="dropdown-item"
-                href="/lancerdonnie"
-                data-ga-click="Header, go to profile, text:your profile"
-                data-hydro-click='{"event_type":"global_header.user_menu_dropdown.click","payload":{"request_url":"https://github.com/users/49131807/menu","target":"YOUR_PROFILE","originating_url":"https://github.com/users/49131807/menu","user_id":49131807}}'
-                data-hydro-click-hmac="90ae4ea4e0d3caceceacd71f3ab5d09afac77586429e76b19e6663262adf0a5d"
-                >Your profile</a
-              >
-
-              <a
-                role="menuitem"
-                class="dropdown-item"
-                href="/lancerdonnie?tab=repositories"
-                data-ga-click="Header, go to repositories, text:your repositories"
-                data-hydro-click='{"event_type":"global_header.user_menu_dropdown.click","payload":{"request_url":"https://github.com/users/49131807/menu","target":"YOUR_REPOSITORIES","originating_url":"https://github.com/users/49131807/menu","user_id":49131807}}'
-                data-hydro-click-hmac="5cc7aa672d464715b101a580b6b064ef9c6e1ad35aaa68e7ad97e1a1e4e89ddc"
-                >Your repositories</a
-              >
-
-              <a
-                role="menuitem"
-                class="dropdown-item"
-                href="/codespaces"
-                data-ga-click="Header, go to codespaces, text:your codespaces"
-                data-hydro-click='{"event_type":"global_header.user_menu_dropdown.click","payload":{"request_url":"https://github.com/users/49131807/menu","target":"YOUR_CODESPACES","originating_url":"https://github.com/users/49131807/menu","user_id":49131807}}'
-                data-hydro-click-hmac="4c201d7daf80de0a84569e5156e73e2c9e9436523ffe1850883945686843daf4"
-                >Your codespaces</a
-              >
-
-              <a
-                role="menuitem"
-                class="dropdown-item"
-                href="/lancerdonnie?tab=projects"
-                data-ga-click="Header, go to projects, text:your projects"
-                data-hydro-click='{"event_type":"global_header.user_menu_dropdown.click","payload":{"request_url":"https://github.com/users/49131807/menu","target":"YOUR_PROJECTS","originating_url":"https://github.com/users/49131807/menu","user_id":49131807}}'
-                data-hydro-click-hmac="31c4343f1d86a62f093e9569f88db334ecda2d6c0c475d0dd64191894c3eb6d1"
-                >Your projects</a
-              >
-
-              <a
-                role="menuitem"
-                class="dropdown-item"
-                href="/lancerdonnie?tab=stars"
-                data-ga-click="Header, go to starred repos, text:your stars"
-                data-hydro-click='{"event_type":"global_header.user_menu_dropdown.click","payload":{"request_url":"https://github.com/users/49131807/menu","target":"YOUR_STARS","originating_url":"https://github.com/users/49131807/menu","user_id":49131807}}'
-                data-hydro-click-hmac="788a5f34405c857286cca4efc57a2132d81777354fba46b034b5c79052260298"
-                >Your stars</a
-              >
-              <a
-                role="menuitem"
-                class="dropdown-item"
-                href="https://gist.github.com/mine"
-                data-ga-click="Header, your gists, text:your gists"
-                data-hydro-click='{"event_type":"global_header.user_menu_dropdown.click","payload":{"request_url":"https://github.com/users/49131807/menu","target":"YOUR_GISTS","originating_url":"https://github.com/users/49131807/menu","user_id":49131807}}'
-                data-hydro-click-hmac="0b3e7243dfe5940a4c4fefb7c2de994b568a03a888947fdf59d53b97783d2951"
-                >Your gists</a
-              >
-
-              <div role="none" class="dropdown-divider"></div>
-              <a
-                role="menuitem"
-                class="dropdown-item"
-                href="/account/choose?action=upgrade"
-                data-ga-click="Header, go to compare plans, text:upgrade"
-                data-hydro-click='{"event_type":"global_header.user_menu_dropdown.click","payload":{"request_url":"https://github.com/users/49131807/menu","target":"UPGRADE","originating_url":"https://github.com/users/49131807/menu","user_id":49131807}}'
-                data-hydro-click-hmac="f408a3c9fd10b765b0ca313d85f1fb73bb8e72cff54e777ba9c75730a87b4349"
-                >Upgrade</a
-              >
-
-              <div
-                id="feature-enrollment-toggle"
-                class="
-                  hide-sm hide-md
-                  feature-preview-details
-                  position-relative
-                "
-              >
-                <button
-                  type="button"
-                  class="dropdown-item btn-link"
-                  role="menuitem"
-                  data-feature-preview-trigger-url="/users/lancerdonnie/feature_previews"
-                  data-feature-preview-close-details='{"event_type":"feature_preview.clicks.close_modal","payload":{"originating_url":"https://github.com/users/49131807/menu","user_id":49131807}}'
-                  data-feature-preview-close-hmac="cd2861e2d72404ce0bad360fb7a02f152c5f9f78c373f340f1b482d20be8a8c6"
-                  data-hydro-click='{"event_type":"feature_preview.clicks.open_modal","payload":{"link_location":"user_dropdown","originating_url":"https://github.com/users/49131807/menu","user_id":49131807}}'
-                  data-hydro-click-hmac="d5a9e3ff8fb34f59a56977829e87ff2e56d18afef5b524cb4ce357a37bb09c63"
-                >
-                  Feature preview
-                </button>
-                <span
-                  class="feature-preview-indicator js-feature-preview-indicator"
-                  hidden=""
-                ></span>
-              </div>
-
-              <a
-                role="menuitem"
-                class="dropdown-item"
-                href="https://docs.github.com"
-                data-ga-click="Header, go to help, text:help"
-                data-hydro-click='{"event_type":"global_header.user_menu_dropdown.click","payload":{"request_url":"https://github.com/users/49131807/menu","target":"HELP","originating_url":"https://github.com/users/49131807/menu","user_id":49131807}}'
-                data-hydro-click-hmac="b78f76b8b76d8fd1996020f5dc16bbb2d26cc5260a272c08bd2d56f4f1794aba"
-                >Help</a
-              >
-              <a
-                role="menuitem"
-                class="dropdown-item"
-                href="/settings/profile"
-                data-ga-click="Header, go to settings, icon:settings"
-                data-hydro-click='{"event_type":"global_header.user_menu_dropdown.click","payload":{"request_url":"https://github.com/users/49131807/menu","target":"SETTINGS","originating_url":"https://github.com/users/49131807/menu","user_id":49131807}}'
-                data-hydro-click-hmac="40d85b04b7b91fb3f227ecd1009dfbf8374aafdccb1504b906584e060836fb89"
-                >Settings</a
-              >
-              <div role="none" class="dropdown-divider"></div>
-              <!-- '"` --><!-- </textarea></xmp> -->
-              <form
-                class="logout-form"
-                action="/logout"
-                accept-charset="UTF-8"
-                method="post"
-              >
-                <input
-                  type="hidden"
-                  name="authenticity_token"
-                  value="cP/KDH/+UaYrDnva5YCvgbmqYUdhdLRRecvlc2af2Mug9CWBbabHV8k0zMeiNsYnmCCbSMe2QhKWgBYsoHB+gA=="
-                />
-                <button
-                  type="submit"
-                  class="dropdown-item dropdown-signout"
-                  data-ga-click="Header, sign out, icon:logout"
-                  data-hydro-click='{"event_type":"global_header.user_menu_dropdown.click","payload":{"request_url":"https://github.com/users/49131807/menu","target":"SIGN_OUT","originating_url":"https://github.com/users/49131807/menu","user_id":49131807}}'
-                  data-hydro-click-hmac="7b66abd900acee86947028b9ddf1e282120381938dce053c59849aa9c36e89f7"
-                  role="menuitem"
-                >
-                  Sign out
-                </button>
-                <input
-                  type="text"
-                  name="required_field_689e"
-                  hidden="hidden"
-                  class="form-control"
-                /><input
-                  type="hidden"
-                  name="timestamp"
-                  value="1621440718998"
-                  class="form-control"
-                /><input
-                  type="hidden"
-                  name="timestamp_secret"
-                  value="250d49b8dbed704b5285babd8be1d2f6b7d7d57a79903d75f02a21e283593742"
-                  class="form-control"
-                />
-              </form>
-            </details-menu>
           </details>
         </div>
       </div>
     </nav>
     <main>
-      <div class="flex bg-white" style="height: 74px; position: sticky; top: 0">
-        <div style="flex: 1"></div>
-        <nav style="flex: 3" class="flex items-end">
-          <a href="">
-            <svg
-              aria-hidden="true"
-              viewBox="0 0 16 16"
-              version="1.1"
-              height="16"
-              width="16"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M0 1.75A.75.75 0 01.75 1h4.253c1.227 0 2.317.59 3 1.501A3.744 3.744 0 0111.006 1h4.245a.75.75 0 01.75.75v10.5a.75.75 0 01-.75.75h-4.507a2.25 2.25 0 00-1.591.659l-.622.621a.75.75 0 01-1.06 0l-.622-.621A2.25 2.25 0 005.258 13H.75a.75.75 0 01-.75-.75V1.75zm8.755 3a2.25 2.25 0 012.25-2.25H14.5v9h-3.757c-.71 0-1.4.201-1.992.572l.004-7.322zm-1.504 7.324l.004-5.073-.002-2.253A2.25 2.25 0 005.003 2.5H1.5v9h3.757a3.75 3.75 0 011.994.574z"
-              ></path>
-            </svg>
-            <span>Overview</span>
-          </a>
-          <a href="">
-            <svg
-              aria-hidden="true"
-              viewBox="0 0 16 16"
-              version="1.1"
-              height="16"
-              width="16"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"
-              ></path>
-            </svg>
-            <span>Repositories</span>
-            <span>123</span>
-          </a>
-          <a href="">
-            <svg
-              aria-hidden="true"
-              viewBox="0 0 16 16"
-              version="1.1"
-              height="16"
-              width="16"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M1.75 0A1.75 1.75 0 000 1.75v12.5C0 15.216.784 16 1.75 16h12.5A1.75 1.75 0 0016 14.25V1.75A1.75 1.75 0 0014.25 0H1.75zM1.5 1.75a.25.25 0 01.25-.25h12.5a.25.25 0 01.25.25v12.5a.25.25 0 01-.25.25H1.75a.25.25 0 01-.25-.25V1.75zM11.75 3a.75.75 0 00-.75.75v7.5a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75zm-8.25.75a.75.75 0 011.5 0v5.5a.75.75 0 01-1.5 0v-5.5zM8 3a.75.75 0 00-.75.75v3.5a.75.75 0 001.5 0v-3.5A.75.75 0 008 3z"
-              ></path>
-            </svg>
-            <span>Projects</span>
-          </a>
-          <a href="">
-            <svg
-              aria-hidden="true"
-              viewBox="0 0 16 16"
-              version="1.1"
-              height="16"
-              width="16"
-              class="octicon octicon-package UnderlineNav-octicon hide-sm"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M8.878.392a1.75 1.75 0 00-1.756 0l-5.25 3.045A1.75 1.75 0 001 4.951v6.098c0 .624.332 1.2.872 1.514l5.25 3.045a1.75 1.75 0 001.756 0l5.25-3.045c.54-.313.872-.89.872-1.514V4.951c0-.624-.332-1.2-.872-1.514L8.878.392zM7.875 1.69a.25.25 0 01.25 0l4.63 2.685L8 7.133 3.245 4.375l4.63-2.685zM2.5 5.677v5.372c0 .09.047.171.125.216l4.625 2.683V8.432L2.5 5.677zm6.25 8.271l4.625-2.683a.25.25 0 00.125-.216V5.677L8.75 8.432v5.516z"
-              ></path>
-            </svg>
-            <span>Packages</span>
-          </a>
-        </nav>
+      <div style="position: sticky; top: 0; border-bottom: 1px solid #e1e4e8">
+        <div class="flex bg-white mt-24" style="height: 49px">
+          <div style="flex: 1"></div>
+          <nav style="flex: 3" class="tabs flex items-center">
+            <a class="tab" href="">
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 16 16"
+                version="1.1"
+                height="16"
+                width="16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M0 1.75A.75.75 0 01.75 1h4.253c1.227 0 2.317.59 3 1.501A3.744 3.744 0 0111.006 1h4.245a.75.75 0 01.75.75v10.5a.75.75 0 01-.75.75h-4.507a2.25 2.25 0 00-1.591.659l-.622.621a.75.75 0 01-1.06 0l-.622-.621A2.25 2.25 0 005.258 13H.75a.75.75 0 01-.75-.75V1.75zm8.755 3a2.25 2.25 0 012.25-2.25H14.5v9h-3.757c-.71 0-1.4.201-1.992.572l.004-7.322zm-1.504 7.324l.004-5.073-.002-2.253A2.25 2.25 0 005.003 2.5H1.5v9h3.757a3.75 3.75 0 011.994.574z"
+                ></path>
+              </svg>
+              <span>Overview</span>
+            </a>
+            <a class="tab selected" href="">
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 16 16"
+                version="1.1"
+                height="16"
+                width="16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"
+                ></path>
+              </svg>
+              <span>Repositories</span>
+              <span class="pill">123</span>
+            </a>
+            <a class="tab" href="">
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 16 16"
+                version="1.1"
+                height="16"
+                width="16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1.75 0A1.75 1.75 0 000 1.75v12.5C0 15.216.784 16 1.75 16h12.5A1.75 1.75 0 0016 14.25V1.75A1.75 1.75 0 0014.25 0H1.75zM1.5 1.75a.25.25 0 01.25-.25h12.5a.25.25 0 01.25.25v12.5a.25.25 0 01-.25.25H1.75a.25.25 0 01-.25-.25V1.75zM11.75 3a.75.75 0 00-.75.75v7.5a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75zm-8.25.75a.75.75 0 011.5 0v5.5a.75.75 0 01-1.5 0v-5.5zM8 3a.75.75 0 00-.75.75v3.5a.75.75 0 001.5 0v-3.5A.75.75 0 008 3z"
+                ></path>
+              </svg>
+              <span>Projects</span>
+            </a>
+            <a class="tab" href="">
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 16 16"
+                version="1.1"
+                height="16"
+                width="16"
+                class="octicon octicon-package UnderlineNav-octicon hide-sm"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M8.878.392a1.75 1.75 0 00-1.756 0l-5.25 3.045A1.75 1.75 0 001 4.951v6.098c0 .624.332 1.2.872 1.514l5.25 3.045a1.75 1.75 0 001.756 0l5.25-3.045c.54-.313.872-.89.872-1.514V4.951c0-.624-.332-1.2-.872-1.514L8.878.392zM7.875 1.69a.25.25 0 01.25 0l4.63 2.685L8 7.133 3.245 4.375l4.63-2.685zM2.5 5.677v5.372c0 .09.047.171.125.216l4.625 2.683V8.432L2.5 5.677zm6.25 8.271l4.625-2.683a.25.25 0 00.125-.216V5.677L8.75 8.432v5.516z"
+                ></path>
+              </svg>
+              <span>Packages</span>
+            </a>
+          </nav>
+        </div>
       </div>
-      <div class="flex" style="height: 200vh">
-        <div style="flex: 1">
+      <div class="flex px-16" style="height: 200vh">
+        <div class="px-16" style="flex: 1">
           <div>
-            <div class="flex justify-center">
+            <div
+              class="flex justify-center relative"
+              style="z-index: 4; margin-top: -30px"
+            >
               <img
                 class="border-round"
                 src="https://avatars.githubusercontent.com/u/8677283?v=4"
@@ -1112,40 +202,65 @@
               />
             </div>
             <h1 class="py-16">
-              <span>Ire Adenirokun</span>
-              <span>ireade</span>
+              <span class="block text-lg">Ire Adenirokun</span>
+              <span
+                class="block text-md line-24"
+                style="font-weight: 300; color: #586069"
+                >ireade</span
+              >
             </h1>
-            <span class="mt-16"
+            <span class="mt-16 text-smd"
               >Frontend Developer and User Interface Designer</span
             >
           </div>
         </div>
-        <div style="flex: 3">
-          <form class="py-16 flex" style="height: 74px; background-color: blue">
-            <input type="text" name="" id="" />
+        <div class="px-16" style="flex: 3">
+          <form
+            class="py-16 flex"
+            style="height: 65px; border-bottom: 1px solid #e1e4e8"
+          >
+            <input
+              placeholder="Find a repository..."
+              class="repo-search w-full"
+              type="text"
+              name=""
+              id=""
+            />
           </form>
-          <div></div>
+          <div
+            class="flex items-center"
+            style="border-bottom: 1px solid #e1e4e8; height: 50px"
+          >
+            <span class="font-bold">124&nbsp;</span> results for
+            <span class="font-bold">&nbsp;public&nbsp;</span>repositories
+          </div>
           <ul>
-            <li class="py-24 flex" style="border-bottom: 1px solid #e1e4e8">
-              <div>
-                <h3>nd1309-rea-estate-marketplace</h3>
-                <p>
+            <li
+              class="repo py-24 flex"
+              style="border-bottom: 1px solid #e1e4e8"
+            >
+              <div style="flex: 3">
+                <h3 class="mb-4 text-md font-bolder line-30">
+                  <a href="">nd1309-rea-estate-marketplace</a>
+                </h3>
+                <p class="line-21">
                   Blockchain Nanodegree Capstone Project - Real Estate
                   Marketplace
                 </p>
-                <div>
-                  <span>
+                <div class="details flex line-18">
+                  <span class="mr-16 flex items-center">
                     <span
                       style="
                         background-color: yellow;
                         height: 10px;
                         width: 10px;
+                        margin-right: 3px;
                       "
-                      class="border-round inline-block mr-16"
+                      class="border-round inline-block"
                     ></span>
                     <span>Javascript</span>
                   </span>
-                  <a href="" class="mr-16">
+                  <a href="" class="link mr-16 flex items-center">
                     <svg
                       aria-label="star"
                       viewBox="0 0 16 16"
@@ -1159,9 +274,9 @@
                         d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"
                       ></path>
                     </svg>
-                    <span>4</span>
+                    <span class="ml-3">4</span>
                   </a>
-                  <a href="" class="mr-16">
+                  <a href="" class="link mr-16 flex items-center">
                     <svg
                       aria-label="fork"
                       viewBox="0 0 16 16"
@@ -1175,12 +290,28 @@
                         d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75 8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0 002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0 01-.75.75h-4.5A.75.75 0 015 6.25v-.878zm3.75 7.378a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm3-8.75a.75.75 0 100-1.5.75.75 0 000 1.5z"
                       ></path>
                     </svg>
-                    <span>1</span>
+                    <span class="ml-3">1</span>
                   </a>
                   <span>Updated 9 days ago</span>
                 </div>
               </div>
-              <div></div>
+              <div class="flex justify-end items-start" style="flex: 1">
+                <button class="btn flex items-center text-sm line-20" style="">
+                  <svg
+                    viewBox="0 0 16 16"
+                    version="1.1"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"
+                    ></path>
+                  </svg>
+                  <span class="ml-4"> star</span>
+                </button>
+              </div>
             </li>
           </ul>
         </div>
