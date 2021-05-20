@@ -70,6 +70,7 @@ const fetchData = async () => {
 
   document.querySelector('#big-avatar').src = avatarUrl;
   document.querySelector('#small-avatar').src = avatarUrl;
+  document.querySelector('#small-avatar2').src = avatarUrl;
   document.querySelector('#name').textContent = name;
   document.querySelector('#login').textContent = login;
   document.querySelector('#bio').textContent = bio;
@@ -169,6 +170,17 @@ const fetchData = async () => {
     li.innerHTML = repoTemplate(e).trim();
     repoList.appendChild(li);
   });
+
+  document.querySelector('#harmburger').addEventListener('click', (e) => {
+    const style = document.querySelector('.middle-nav').style;
+    if (style.display !== 'flex') {
+      style.display = 'flex';
+    } else {
+      style.display = '';
+    }
+    // .classList.toggle('flex');
+  });
+
   name.textContent = document.body.classList.remove('hidden');
 
   var observer = new IntersectionObserver(

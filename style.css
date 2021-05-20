@@ -244,13 +244,15 @@ main .a {
   }
   main .b .b-a {
     display: flex;
-    height: 101.77px;
     margin-bottom: 24px;
+    align-items: center;
   }
   main .b .b-a > div {
     margin-top: unset !important;
     margin-right: 16px;
     flex: 1;
+    flex-shrink: 0;
+    display: inline-block;
   }
   main .b .b-a > h1 {
     flex: 5;
@@ -261,14 +263,13 @@ main .a {
   }
   .top-nav {
     flex-wrap: wrap;
-    height: auto !important;
-    padding: 16px !important;
+    height: auto;
+    padding: 16px;
   }
   .middle-nav {
-    /* display: none !important; */
+    display: none;
     order: 4;
     margin-top: 16px;
-    display: flex;
     flex: auto;
     align-self: stretch;
     flex-direction: column;
@@ -277,7 +278,7 @@ main .a {
   }
   .middle-nav > form {
     margin-bottom: 16px;
-    margin-right: unset !important;
+    margin-right: unset;
     width: 100%;
   }
   .search {
@@ -290,21 +291,21 @@ main .a {
     align-self: stretch;
   }
   .header-links a {
-    display: block;
+    display: flex;
     padding: 8px 0;
-    margin-right: unset !important;
+    margin-right: unset;
     border-top: 1px solid;
     border-color: hsla(0, 0%, 100%, 0.15);
   }
   .plus-icon,
   .avatar-icon {
-    display: none !important;
+    display: none;
   }
   .notification-icon {
-    margin-right: unset !important;
+    margin-right: unset;
   }
   .harmburger {
-    display: block !important;
+    display: block;
   }
   .github-icon {
     flex-grow: 1;
