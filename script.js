@@ -1,5 +1,5 @@
 const ENDPOINT = 'https://api.github.com/graphql';
-const TOKEN = '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';
+const TOKEN = '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';
 
 const headers = {
   'Content-Type': 'application/json',
