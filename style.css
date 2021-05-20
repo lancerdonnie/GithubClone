@@ -28,8 +28,16 @@ svg {
   fill: currentColor;
 }
 
+li {
+  list-style-type: none;
+}
+
 summary {
   list-style: none;
+}
+summary:hover {
+  color: hsla(0, 0%, 100%, 0.7);
+  text-decoration: none;
 }
 
 .top-nav {
@@ -81,6 +89,14 @@ input {
   margin-right: 16px;
 }
 
+.header-links a:hover {
+  color: hsla(0, 0%, 100%, 0.7);
+}
+
+.github-icon svg:hover {
+  color: hsla(0, 0%, 100%, 0.7);
+}
+
 .dropdown-caret {
   margin-left: 5px;
   display: inline-block;
@@ -95,7 +111,11 @@ input {
   border-left: 4px solid transparent;
 }
 
-.notification {
+.notification > a:hover {
+  color: hsla(0, 0%, 100%, 0.7);
+}
+
+.notification > a > span {
   position: absolute;
   top: -5px;
   left: 7px;
@@ -201,4 +221,12 @@ input {
 
 .link:hover {
   color: #0366d6;
+}
+
+/* //768 */
+
+@media only screen and (max-width: 768px) {
+  body {
+    /* background-color: red; */
+  }
 }
