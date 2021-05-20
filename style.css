@@ -78,7 +78,6 @@ input {
 }
 
 .search::placeholder {
-  /* color: #6a737d; */
   color: hsla(0, 0%, 100%, 0.75);
 }
 
@@ -138,12 +137,7 @@ input {
   color: #959da5;
 }
 
-.tab:hover {
-  /* border-bottom: 2px solid #d1d5da; */
-}
-
 .tab.selected {
-  /* border-bottom: 2px solid #f9826c; */
   color: #24292e;
   font-weight: 600;
 }
@@ -201,7 +195,6 @@ input {
 }
 
 .btn {
-  padding: 3px 12px;
   color: #24292e;
   background-color: #fafbfc;
   box-shadow: 0 1px 0 rgba(27, 31, 35, 0.04),
@@ -298,8 +291,9 @@ main .a {
     border-color: hsla(0, 0%, 100%, 0.15);
   }
   .plus-icon,
+  .tiny-profile,
   .avatar-icon {
-    display: none;
+    display: none !important;
   }
   .notification-icon {
     margin-right: unset;

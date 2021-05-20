@@ -1,5 +1,5 @@
 const ENDPOINT = 'https://api.github.com/graphql';
-const TOKEN = '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';
+const TOKEN = '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';
 
 const headers = {
   'Content-Type': 'application/json',
@@ -65,14 +65,49 @@ const fetchData = async () => {
   const data = await fetchData();
   if (data == undefined) return;
 
+  const relativeTime = (time) => {
+    const getFormattedDate = (date) => {
+      return new Intl.DateTimeFormat('en-US', {
+        timeZone: 'Africa/Lagos',
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+      }).format(new Date(date));
+    };
+    var msPerMinute = 60 * 1000;
+    var msPerHour = msPerMinute * 60;
+    var msPerDay = msPerHour * 24;
+    var msPerMonth = msPerDay * 30;
+    var msPerYear = msPerDay * 365;
+
+    var elapsed = new Date() - new Date(time);
+
+    if (elapsed < msPerMinute) {
+      return Math.round(elapsed / 1000) + ' seconds ago';
+    } else if (elapsed < msPerHour) {
+      return Math.round(elapsed / msPerMinute) + ' minutes ago';
+    } else if (elapsed < msPerDay) {
+      return Math.round(elapsed / msPerHour) + ' hours ago';
+    } else if (elapsed < msPerMonth) {
+      return Math.round(elapsed / msPerDay) + ' days ago';
+    } else if (elapsed < msPerYear) {
+      return 'on ' + getFormattedDate(time);
+    } else {
+      return Math.round(elapsed / msPerYear);
+    }
+  };
+
   const { avatarUrl, login, name, bio, topRepositories } = data;
   const { totalCount, nodes } = topRepositories;
 
-  document.querySelector('#big-avatar').src = avatarUrl;
+  const bigAvatar = document.querySelector('#big-avatar');
+  bigAvatar.src = avatarUrl;
   document.querySelector('#small-avatar').src = avatarUrl;
   document.querySelector('#small-avatar2').src = avatarUrl;
+  document.querySelector('#small-avatar3').src = avatarUrl;
   document.querySelector('#name').textContent = name;
   document.querySelector('#login').textContent = login;
+  document.querySelector('#login2').textContent = login;
   document.querySelector('#bio').textContent = bio;
   document.querySelector('#pill').textContent = totalCount;
   document.querySelector('#count').textContent = totalCount;
@@ -143,11 +178,11 @@ const fetchData = async () => {
                     </svg>
                     <span class="ml-3">${forkCount}</span>
                   </a>
-                  <span>Updated ${updatedAt}</span>
+                  <span>Updated ${relativeTime(updatedAt)}</span>
                 </div>
               </div>
               <div class="flex justify-end items-start" style="flex: 1">
-                <button class="btn flex items-center text-sm line-20" style="">
+                <button style="padding: 3px 12px" class="btn flex items-center text-sm line-20" style="">
                   <svg
                     viewBox="0 0 16 16"
                     version="1.1"
@@ -181,17 +216,22 @@ const fetchData = async () => {
     }
   });
 
-  name.textContent = document.body.classList.remove('hidden');
-
-  var observer = new IntersectionObserver(
-    (entries) => {
-      console.log(entries[0].isVisible);
-      console.log(entries[0]);
-      if (entries[0].isIntersecting === true)
-        console.log('Element is fully visible in screen');
+  document.addEventListener(
+    'scroll',
+    () => {
+      const rect = bigAvatar.getBoundingClientRect();
+      isOffScreen = rect.bottom < 0;
+      const tinyProfile = document.querySelector('.tiny-profile');
+      if (isOffScreen) {
+        tinyProfile.style.display = 'flex';
+      } else {
+        tinyProfile.style.display = '';
+      }
     },
-    { threshold: [1] }
+    {
+      passive: true,
+    }
   );
 
-  observer.observe(document.querySelector('#big-avatar'));
+  name.textContent = document.body.classList.remove('hidden');
 })();
