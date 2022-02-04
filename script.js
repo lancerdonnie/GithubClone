@@ -122,7 +122,7 @@ const fetchData = async () => {
     updatedAt,
     url,
   }) => {
-return    `
+    return `
     <li
                 class="repo py-24 flex"
                 style="border-bottom: 1px solid #e1e4e8"
@@ -145,7 +145,7 @@ return    `
                         "
                         class="border-round inline-block"
                       ></span>
-                      <span>${primaryLanguage?.langName}</span>
+                      <span>${primaryLanguage?.name}</span>
                     </span>
                     <a href="" class="link mr-16 flex items-center">
                       <svg
@@ -200,8 +200,10 @@ return    `
                   </button>
                 </div>
               </li>
-    `};
+    `;
+  };
   nodes.forEach((e) => {
+    if (!e) return;
     const li = document.createElement('li');
     li.innerHTML = repoTemplate(e).trim();
     repoList.appendChild(li);
